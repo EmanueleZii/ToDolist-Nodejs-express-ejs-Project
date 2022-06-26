@@ -1,0 +1,33 @@
+<%-include("header") -%>
+
+  <div class="jumbotron">
+    <h1 class="text-center">
+      <%= ListTitle %>
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-10 ml-5">
+      <ul class="list-group">
+        <% for(var i=0; i<newListItems.length; i++ ){ %>
+          <li class="list-group-item text-center" style="margin-bottom: 15px;">
+            <%= newListItems[i] %>
+          </li>
+          <%} %>
+      </ul>
+    </div>
+    <br>
+
+    <form class="form-goup mx-auto" action="/" method="post">
+      <input class="form-control-lg text-center" type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button class="btn btn-lg btn-success" type="submit" name="list" value=<%= ListTitle %> style="border-radius: 50%;">+</button>
+    </form><br>
+    <div class="col-4">
+      <form action="/about">
+        <button type="submit" class="btn btn-lg btn-outline-success">About</button><br>
+      </form><br>
+    </div>
+   
+  </div>
+
+<%-include("footer") -%>
